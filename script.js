@@ -96,7 +96,7 @@ var Movie = React.createClass ({
             React.createElement("li", {},
             React.createElement(MovieTitle, {title: this.props.movie.title}),
             React.createElement(MovieDescription, {desc: this.props.movie.desc}),
-            React.createElement(MoviePoster, {src: this.props.movie.url})
+            React.createElement(MoviePoster, {url: this.props.movie.url})
             )
         )
     } 
@@ -111,7 +111,7 @@ var MovieList = React.createClass ({
         React.createElement("h1", {}, "Filmy"),
         React.createElement("ul", {}, 
             this.props.movies.map(function(movie) { 
-                React.createElement(Movie, {key: movie.id, movie: movie})
+               return React.createElement(Movie, {key: movie.id, movie: movie})
             })
         )
         )
